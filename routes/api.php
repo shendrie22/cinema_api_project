@@ -8,6 +8,7 @@ use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CinemaController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -53,4 +54,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/cinemas/{id}', [CinemaController::class, 'show']);
     Route::put('/cinemas/{id}', [CinemaController::class, 'update']);
     Route::delete('/cinemas/{id}', [CinemaController::class, 'destroy']);
+
+    Route::get('/users', [UserController::class, 'index']);
+    Route::post('/users', [UserController::class, 'store']);
+    Route::get('/users/{id}', [UserController::class, 'show']);
+    Route::put('/users/{id}', [UserController::class, 'update']);
+    Route::delete('/users/{id}', [UserController::class, 'destroy']);
 });
